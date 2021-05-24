@@ -1,0 +1,47 @@
+1. You are given a number n.
+2. You've to create a pattern of * and separated by tab as shown in 
+output format.
+
+
+		*	
+	*	*	*	
+*	*	*	*	*	
+	*	*	*	
+		*	
+
+
+
+
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scn = new Scanner(System.in);
+            int n=scn.nextInt();
+            int space=n/2;
+            int star=1;
+            for(int k=1;k<=n;k++){
+            for(int i=1;i<=space;i++)
+            {
+                System.out.print("\t");
+            }
+            for(int i=1;i<=star;i++)
+            {
+                System.out.print("*\t");
+            }
+            
+            if(k<=n/2){
+            star=star+2;
+            space--;
+            }
+            else {
+                space++;
+                star=star-2;
+                
+            }
+                     System.out.println();
+            }
+   
+    }
+}
