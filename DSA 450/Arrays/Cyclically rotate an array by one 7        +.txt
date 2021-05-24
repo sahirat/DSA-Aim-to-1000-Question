@@ -1,0 +1,71 @@
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class GFG {
+	public static void main(String[] args) throws IOException
+	{
+	        BufferedReader br =
+            new BufferedReader(new InputStreamReader(System.in));
+        int t =
+            Integer.parseInt(br.readLine().trim()); // Inputting the testcases
+        while(t-->0)
+        {
+            long n = Long.parseLong(br.readLine().trim());
+            long a[] = new long[(int)(n)];
+            // long getAnswer[] = new long[(int)(n)];
+            String inputLine[] = br.readLine().trim().split(" ");
+            for (int i = 0; i < n; i++) {
+                a[i] = Long.parseLong(inputLine[i]);
+            }
+            
+            Compute obj = new Compute();
+            obj.rotate(a, n);
+            
+            StringBuilder output = new StringBuilder();
+            for(int i=0;i<n;i++)
+                output.append(a[i]+" ");
+            System.out.println(output);
+            
+        }
+	}
+}
+
+// } Driver Code Ends
+
+
+//User function Template for Java
+
+// Main logic function....
+
+// as you move the array by one kept first index element in a temporay variable as a length of 
+ of variable having a datatype long so type casting required if you successfully loop the arrays 
+you will get your desired array
+
+
+
+
+
+class Compute {
+    
+    public void rotate(long a[], long n)
+    {
+      for(int i=1;i<(int)n;i++)
+      {
+          int temp=(int)a[i];
+          a[i]=a[0];
+          a[0]=temp;
+      }
+
+          //  or you can also go through with this part
+
+         long temp=arr[(int)(n)-1];
+       for(int i=(int)n-1;i>0;i--){
+           arr[i]=arr[i-1];
+       }
+       arr[0]=temp;
+
+    
+    }
+}
